@@ -1,6 +1,5 @@
 package Practicas;
 
-
 public class ListaSimplementeEnlazada<T> implements Lista<T> {
     private Elemento<T> cabeza;
     private int numElementos = 0;

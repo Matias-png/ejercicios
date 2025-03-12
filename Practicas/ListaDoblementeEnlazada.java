@@ -25,6 +25,26 @@ public class ListaDoblementeEnlazada<T> implements Lista<T> {
         numElementos++;
         return true;
     }
+    public boolean addBefore(T referencia, T elemento) {
+        ElementoDoble<T> nuevoElemento = new ElementoDoble<>(elemento);
+        ElementoDoble<T> actual = cabeza;
+        while (actual != null) {
+            if (actual.dato.equals(referencia)) {
+                nuevoElemento.siguiente = actual;
+                nuevoElemento.anterior = actual.anterior;
+                if (actual.anterior != null) {
+                    actual.anterior.siguiente = nuevoElemento;
+                } else {
+                    cabeza = nuevoElemento;
+                }
+                actual.anterior = nuevoElemento;
+                numElementos++;
+                return true;
+            }
+            actual = actual.siguiente;
+        }
+        return false;
+    }
 
     @Override
     public boolean delete(T elemento) {
@@ -72,6 +92,7 @@ public class ListaDoblementeEnlazada<T> implements Lista<T> {
     public int getNumElementos() {
         return numElementos;
     }
+
 
     private class IteradorListaDoblementeEnlazada implements Iterador<T> {
         private ElementoDoble<T> actual;

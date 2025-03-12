@@ -1,6 +1,5 @@
 package Practicas;
 
-
 class Elemento<T> {
     T dato;
     Elemento<T> siguiente;
