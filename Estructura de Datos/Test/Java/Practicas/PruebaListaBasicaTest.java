@@ -1,8 +1,6 @@
-package Test.Java.Prueba;
+package Practicas;
 
-import Practicas.Iterador;
-import Practicas.Lista;
-import Practicas.ListaBasica;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +21,6 @@ class PruebaListaBasicaTest {
         while (iterador.hasNext()) {
             resultado.add(iterador.next());
         }
-        assertEquals(List.of(1, 3), resultado);
+        Assertions.assertEquals(List.of(1, 3), resultado);
     }
 }

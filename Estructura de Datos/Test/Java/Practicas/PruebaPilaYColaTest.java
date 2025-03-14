@@ -1,7 +1,5 @@
-package Test.Java.Prueba;
+package Practicas;
 
-import Practicas.Cola;
-import Practicas.Pila;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

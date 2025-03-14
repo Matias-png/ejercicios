@@ -1,8 +1,5 @@
-package Test.Java.Prueba;
+package Practicas;
 
-import Practicas.Iterador;
-import Practicas.Lista;
-import Practicas.ListaSimplementeEnlazada;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
