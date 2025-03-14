@@ -4,7 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 class TestCirculo1Test {
     private Circle c1;
     private Circle c2;
@@ -21,28 +21,28 @@ class TestCirculo1Test {
     }
     @Test
     void testConstructor() {
-        assertEquals(1.1, c1.getRadius(), "El valor de radius debe ser 1.1");
+        assertEquals(1.1, c1.getRadius());
     }
     @Test
     void testgetRadius() {
-        assertEquals(1.1, c1.getRadius(), "El valor de radius debe ser 1.1");
+        assertEquals(1.1, c1.getRadius());
     }
     @Test
     void testsetRadius() {
         c1.setRadius(2.2);
-        assertEquals(2.2, c1.getRadius(), "El valor de radius debe ser 2.2");
+        assertEquals(2.2, c1.getRadius());
     }
     @Test
     void testgetArea() {
-        assertEquals(Math.PI * 1.1 * 1.1, c1.getArea(), "El valor de area debe ser pi * radius * radius");
+        assertEquals(Math.PI * 1.1 * 1.1, c1.getArea());
     }
     @Test
     void testgetCircumference() {
-        assertEquals(2 * Math.PI * 1.1, c1.getCircumference(), "El valor de circumference debe ser 2 * pi * radius");
+        assertEquals(2 * Math.PI * 1.1, c1.getCircumference());
     }
     @Test
     void testtoString() {
         String expected = "Circle[radius=1.1]";
-        assertEquals(expected, c1.toString(), "El valor de toString() debe ser 'Circle[radius=1.1]'");
+        assertEquals(expected, c1.toString());
     }
 }

@@ -3,7 +3,7 @@ package es.uah.matcomp.mp.e1.ejerciciosclases.a;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 class TestAccountTest {
     private Account account1;
     private Account account2;
@@ -24,52 +24,52 @@ class TestAccountTest {
     @org.junit.jupiter.api.Test
     void testCredit() {
         account1.credit(500);
-        assertEquals(1500, account1.getBalance(), "El saldo de la cuenta debe ser 1500 después de acreditar 500");
+        assertEquals(1500, account1.getBalance());
     }
     @org.junit.jupiter.api.Test
     void testDebit() {
         account1.debit(300);
-        assertEquals(700, account1.getBalance(), "El saldo de la cuenta debe ser 700 después de debitar 300");
+        assertEquals(700, account1.getBalance());
     }
 
     @org.junit.jupiter.api.Test
     void testDebitInsufficientBalance() {
-        account1.debit(1200);  // Intentamos retirar más de lo que tiene
-        assertEquals(1000, account1.getBalance(), "El saldo debe seguir siendo 1000 después de un intento fallido de débito");
+        account1.debit(1200);
+        assertEquals(1000, account1.getBalance());
     }
     @org.junit.jupiter.api.Test
     void testTransferTo() {
         account1.transferTo(account2, 300);
-        assertEquals(700, account1.getBalance(), "El saldo de la cuenta 1 debe ser 700 después de transferir 300");
-        assertEquals(800, account2.getBalance(), "El saldo de la cuenta 2 debe ser 800 después de recibir 300");
+        assertEquals(700, account1.getBalance());
+        assertEquals(800, account2.getBalance());
     }
     @org.junit.jupiter.api.Test
     void testTransferToInsufficientFunds() {
-        account1.transferTo(account2, 1200);  // Intentamos transferir más de lo que tiene
-        assertEquals(1000, account1.getBalance(), "El saldo de la cuenta 1 debe seguir siendo 1000 después de una transferencia fallida");
+        account1.transferTo(account2, 1200);
+        assertEquals(1000, account1.getBalance());
     }
     @org.junit.jupiter.api.Test
     void testGetId() {
-        assertEquals("123", account1.getId(), "El ID de la cuenta debe ser '123'");
+        assertEquals("123", account1.getId());
     }
 
     @org.junit.jupiter.api.Test
     void testGetName() {
-        assertEquals("John Doe", account1.getName(), "El nombre de la cuenta debe ser 'John Doe'");
+        assertEquals("John Doe", account1.getName());
     }
     @org.junit.jupiter.api.Test
     void testGetBalance() {
-        assertEquals(1000, account1.getBalance(), "El saldo inicial de la cuenta debe ser 1000");
+        assertEquals(1000, account1.getBalance());
     }
     @org.junit.jupiter.api.Test
     void testAccountCreation() {
         Account newAccount = new Account("789", "Alice", 200);
-        assertEquals(200, newAccount.getBalance(), "El saldo de la nueva cuenta debe ser 200");
+        assertEquals(200, newAccount.getBalance());
     }
     @org.junit.jupiter.api.Test
     void testToString() {
         String expected = "Account [id=123, name=John Doe, balance=1000]";
-        assertEquals(expected, account1.toString(), "El resultado de toString() debe coincidir con la representación esperada");
+        assertEquals(expected, account1.toString());
     }
 
 }
