@@ -1,3 +1,5 @@
+package Excepciones5;
+
 public class MethodCallStackDemo {
 
 public static void main(String[] args) {
@@ -33,7 +35,7 @@ public static void main(String[] args) {
         }
         System.out.println("Exit methodC()");
     }
-    public static void methodD(int msg) throws XxxException, YyyException  {
+    public static void methodD(int msg) throws XxxException, YyyException {
          System.out.println("Enter methodD()");
          if (msg == 1){
             throw new YyyException("Except y");
